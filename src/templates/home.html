@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+
+
+<!-- <h1>{{ title }}</h1>
+<p>{{ message }}</p> -->
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  {% block jumbotron %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+
+
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="display-4">{{ title }}</h1>
+      <p class="lead">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+    <form action="" method="POST">{% csrf_token %}
+      {{ form | crispy }}
+      <input class="btn btn-primary" type="submit" name="" value="Sign Up">
+    </form>
+    </div>
+  </div>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+<!-- Example row of columns -->
+ <div class="row">
+   <div class="col-md-4">
+     <center>
+       <i class="fas fa-code fa-5x"></i>
+     </center>
+     <span class="fa-layers fa-fw">
+       <i class="fas fa-circle fa-5x" style="color:#ff5a5f"></i>
+       <i class="fas fa-code fa-5x" data-fa-transform="shrink-2"></i>
+     </span>
+     <h2 class="center grey">Coding Applications</h2>
+     <p class="lead grey justify">You want to build a website to promote your activity, create
+       an application to enhance your business, or automate some tasks to focus on other parts of
+       your business, we can do that for you using the latest and most popular technologies and frameworks.
+     </p>
+     <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+   </div>
+   <div class="col-md-4">
+     <h2 class="center">Maintenance and Marketing <i class="fas fa-wrench"></i></h2>
+     <p class="lead grey justify">You have a web page that you want to maintain, enhance or promote, we can perform these
+     tasks for you and help you with your marketing side of your business. If you do not have a website yet we
+     can guide you for the creation and the tools to use.</p>
+     <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+   </div>
+   <div class="col-md-4">
+     <h2 class="center">Data Science and Analytics <i class="fas fa-chart-pie"></i></h2>
+     <p class="lead grey justify">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+     <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+   </div>
+ </div>
+ {% endblock %}

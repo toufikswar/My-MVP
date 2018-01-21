@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light" style="background-color:#007AAB;">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      Touf-MAN
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        {% if request.user.is_authenticated or '/accounts/login/' in request.path %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'auth_logout' %}">Logout <i class="material-icons md-24">&#xE879;</i><span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+        {% else %}
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="{% url 'auth_login' %}">Login<span class="sr-only">(current)</span></a>
+        </li> -->
+        <form class="navbar-form form-inline navbar-left" action="{% url 'auth_login' %}" method="POST">{% csrf_token %}
+          <div class="form-group">
+            <input class="form-control" type="text" name="username" value="" placeholder="User ID">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" name="password" value="" placeholder="Password">
+          </div>
+            <button class="btn btn-primary" type="submit" name="button">Login</button>
+        </form>
+        <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'registration_register' %}">Register <i class="material-icons md-24">&#xE853;</i><span class="sr-only">(current)</span></a>
+        </li>
+        </ul>
+        {% endif %}
+
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+    </div>
+  </div>
+</nav>
