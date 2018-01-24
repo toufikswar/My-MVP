@@ -19,38 +19,45 @@
       console.log($target);
       //console.log($target.getAttribute("class"));
       $attribut = $target.attr("class");
-      if ($target.getAttribute("class") === "col-md-4") {
+      console.log($attribut);
+      if ($attribut === "lead grey justify") {
         //$selected = $target.find(".col-md-4");
-
+        var $circle1 = $target.siblings('div').children().children().first();
+        $circle1.css('color', '#ff5a5f');
+        $circle1.fadeTo('slow', 1);
+        console.log($circle1);
       }
+      else {
 
+        var $circle1 = $target.siblings('div').children().children().first();
+        console.log($circle1);
+        $circle1.css('color', '#008489');
+      }
 
       var isCodingHover = $("[class = 'col-md-4']").eq(1).is(":hover");
       if (isCodingHover === true) {
         console.log("is_hovered");
 
-
-
       }
     });
 
 
 
-    $("[class = 'col-md-4']").eq(1).on('mouseover', function(event) {
-      event.preventDefault();
-      var $circle = $(this).find("#cirlce1")
-      $circle.css('color', '#ff5a5f');
-      $circle.fadeTo('slow', 1 , function() {
-        $(this).children().first().addClass('fa-8x');
-      });
-
-    });
-
-    $('#coding').on('mouseleave', function(event) {
-      event.preventDefault();
-      $(this).find("#code").css('color', '#008489');
-      $(this).children().first().removeClass('fa-8x');
-    });
+    // $("[class = 'col-md-4']").eq(1).on('mouseover', function(event) {
+    //   event.preventDefault();
+    //   var $circle = $(this).find("#cirlce1")
+    //   $circle.css('color', '#ff5a5f');
+    //   $circle.fadeTo('slow', 1 , function() {
+    //     $(this).children().first().addClass('fa-8x');
+    //   });
+    //
+    // });
+    //
+    // $('#coding').on('mouseleave', function(event) {
+    //   event.preventDefault();
+    //   $(this).find("#code").css('color', '#008489');
+    //   $(this).children().first().removeClass('fa-8x');
+    // });
 
   });
 </script>
