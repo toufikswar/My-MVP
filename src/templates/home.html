@@ -11,35 +11,33 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-
-
-  <div class="row">
-    <div class="col-md-8">
-      <h1 class="display-4">{{ title }}</h1>
-      <p class="lead">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="display-4">{{ title }}</h1>
+        <p class="lead">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a id="meinbutton" class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Sign up <i class="fas fa-at fa-1x"></i></h2>
+        <form action="" method="POST">{% csrf_token %}
+          {{ form | crispy }}
+          <input class="btn btn-primary" type="submit" name="" value="Sign Up">
+        </form>
+      </div>
     </div>
-    <div class="col-md-4">
-    <form action="" method="POST">{% csrf_token %}
-      {{ form | crispy }}
-      <input class="btn btn-primary" type="submit" name="" value="Sign Up">
-    </form>
-    </div>
-  </div>
   </div>
 </div>
 {% endblock %}
 {% block content %}
 <!-- Example row of columns -->
  <div class="row">
-   <div class="col-md-4">
-     <center>
-       <i class="fas fa-code fa-5x"></i>
-     </center>
-     <span class="fa-layers fa-fw">
-       <i class="fas fa-circle fa-5x" style="color:#ff5a5f"></i>
-       <i class="fas fa-code fa-5x" data-fa-transform="shrink-2"></i>
-     </span>
+   <div id="coding" class="col-md-4">
+     <div class="fa-6x center">
+       <span class="fa-layers fa-fw">
+         <i id="circle1" class="fas fa-circle" style="color:#008489;opacity:0.6;"></i>
+         <i style="color:white;" class="fas fa-code" data-fa-transform="shrink-8"></i>
+       </span>
+     </div>
      <h2 class="center grey">Coding Applications</h2>
      <p class="lead grey justify">You want to build a website to promote your activity, create
        an application to enhance your business, or automate some tasks to focus on other parts of
@@ -48,15 +46,28 @@
      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
    </div>
    <div class="col-md-4">
-     <h2 class="center">Maintenance and Marketing <i class="fas fa-wrench"></i></h2>
+     <div class="fa-8x center">
+       <span class="fa-layers fa-fw">
+         <i id="circle2" class="fas fa-circle" style="color:#008489;"></i>
+         <i style="color:white;" class="fas fa-wrench" data-fa-transform="shrink-8"></i>
+       </span>
+     </div>
+     <h2 class="center">Maintenance and Marketing</h2>
      <p class="lead grey justify">You have a web page that you want to maintain, enhance or promote, we can perform these
      tasks for you and help you with your marketing side of your business. If you do not have a website yet we
      can guide you for the creation and the tools to use.</p>
      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
    </div>
    <div class="col-md-4">
-     <h2 class="center">Data Science and Analytics <i class="fas fa-chart-pie"></i></h2>
-     <p class="lead grey justify">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+     <div class="fa-8x center">
+       <span class="fa-layers fa-fw">
+         <i id="circle3" class="fas fa-circle" style="color:#008489;"></i>
+         <i style="color:white;" class="fas fa-chart-line" data-fa-transform="shrink-8"></i>
+       </span>
+     </div>
+     <h2 class="center">Data Science and Analytics</h2>
+     <p class="lead grey justify">You have data that you have gathered and that you wish to analyze and get value from, find
+     tends and get value for your business or activity, we can provide you the tools and expertise to do so.</p>
      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
    </div>
  </div>

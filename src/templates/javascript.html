@@ -1,15 +1,56 @@
 {% load static %}
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-{# <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> #}
-{# <script>window.jQuery || document.write('<script src="{% static '/js/jquery-3.2.1.slim.min.js' %}"><\/script>')</script> #}
-<script src="{% static '/js/jquery-3.2.1.slim.min.js' %}"></script>
+
+
+<!-- <script src="{% static '/js/jquery-3.2.1.slim.min.js' %}"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{% static '/js/popper.min.js' %}"></script>
 <script src='{% static "/js/bootstrap.min.js" %}'></script>
 
+
 <script>
   $(document).ready(function() {
-    alert('yeahhh')
+
+    $all = $("[class = 'col-md-4']");
+    console.log($all.first().index());
+    $(document).mousemove(function(event) {
+      $target = $(event.target);
+      console.log($target);
+      //console.log($target.getAttribute("class"));
+      $attribut = $target.attr("class");
+      if ($target.getAttribute("class") === "col-md-4") {
+        //$selected = $target.find(".col-md-4");
+
+      }
+
+
+      var isCodingHover = $("[class = 'col-md-4']").eq(1).is(":hover");
+      if (isCodingHover === true) {
+        console.log("is_hovered");
+
+
+
+      }
+    });
+
+
+
+    $("[class = 'col-md-4']").eq(1).on('mouseover', function(event) {
+      event.preventDefault();
+      var $circle = $(this).find("#cirlce1")
+      $circle.css('color', '#ff5a5f');
+      $circle.fadeTo('slow', 1 , function() {
+        $(this).children().first().addClass('fa-8x');
+      });
+
+    });
+
+    $('#coding').on('mouseleave', function(event) {
+      event.preventDefault();
+      $(this).find("#code").css('color', '#008489');
+      $(this).children().first().removeClass('fa-8x');
+    });
+
   });
 </script>
