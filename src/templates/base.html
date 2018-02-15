@@ -16,9 +16,10 @@
   <body>
     {% include "navbar.html" %}
 
-
+    {% if not request.user.is_authenticated %}
       {% block jumbotron %}
       {% endblock %}
+    {% endif %}
 
     <main role="main">
       <div class="container">
@@ -26,6 +27,7 @@
         {% endblock %}
       </div>
     </main>
+
 
     <footer class="container">
       <hr>

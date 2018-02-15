@@ -158,3 +158,4 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/" # will be redirected home
+LOGOUT_REDIRECT_URL = "/" # will be redirected home

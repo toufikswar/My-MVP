@@ -7,8 +7,8 @@
 <!-- <h1>{{ title }}</h1>
 <p>{{ message }}</p> -->
   <!-- Main jumbotron for a primary marketing message or call to action -->
-  {% block jumbotron %}
 
+{% block jumbotron %}
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <div class="row">
@@ -18,7 +18,7 @@
         <p><a id="meinbutton" class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
       <div class="col-md-4">
-        <h2>Sign up <i class="fas fa-at fa-1x"></i></h2>
+        <h2>Sign up <i class="fas fa-envelope"></i></h2>
         <form action="" method="POST">{% csrf_token %}
           {{ form | crispy }}
           <input class="btn btn-primary" type="submit" name="" value="Sign Up">
@@ -28,13 +28,13 @@
   </div>
 </div>
 {% endblock %}
+
 {% block content %}
-<!-- Example row of columns -->
  <div class="row">
    <div id="coding" class="col-md-4">
-     <div class="fa-6x center">
+     <div class="fa-8x center">
        <span class="fa-layers fa-fw">
-         <i id="circle1" class="fas fa-circle" style="color:#008489;opacity:0.6;"></i>
+         <i id="circle1" class="fas fa-circle" style="color:#ff5a5f;opacity:0.6;"></i>
          <i style="color:white;" class="fas fa-code" data-fa-transform="shrink-8"></i>
        </span>
      </div>
@@ -48,7 +48,7 @@
    <div class="col-md-4">
      <div class="fa-8x center">
        <span class="fa-layers fa-fw">
-         <i id="circle2" class="fas fa-circle" style="color:#008489;"></i>
+         <i id="circle2" class="fas fa-circle" style="color:#ff5a5f;opacity:0.6;"></i>
          <i style="color:white;" class="fas fa-wrench" data-fa-transform="shrink-8"></i>
        </span>
      </div>
@@ -61,7 +61,7 @@
    <div class="col-md-4">
      <div class="fa-8x center">
        <span class="fa-layers fa-fw">
-         <i id="circle3" class="fas fa-circle" style="color:#008489;"></i>
+         <i id="circle3" class="fas fa-circle" style="color:#ff5a5f;opacity:0.6;"></i>
          <i style="color:white;" class="fas fa-chart-line" data-fa-transform="shrink-8"></i>
        </span>
      </div>

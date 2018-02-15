@@ -12,34 +12,60 @@
 <script>
   $(document).ready(function() {
 
-    $all = $("[class = 'col-md-4']");
-    console.log($all.first().index());
-    $(document).mousemove(function(event) {
-      $target = $(event.target);
-      console.log($target);
-      //console.log($target.getAttribute("class"));
-      $attribut = $target.attr("class");
-      console.log($attribut);
-      if ($attribut === "lead grey justify") {
-        //$selected = $target.find(".col-md-4");
-        var $circle1 = $target.siblings('div').children().children().first();
-        $circle1.css('color', '#ff5a5f');
-        $circle1.fadeTo('slow', 1);
-        console.log($circle1);
-      }
-      else {
+    // $all = $("[class = 'col-md-4']");
+    // //console.log($all.first().index());
+    // $(document).mousemove(function(event) {
+    //   $target = $(event.target);
+    //   $attribut = $target.attr("class");
+    //   //var $circle1 = $target.siblings('div').children().children().first();
+    //
+    //   if ($attribut === "btn btn-secondary") {
+    //     var $circle = $target.parent().siblings('div').children().children().first();
+    //     console.log($circle);
+    //     //$selected = $target.find(".col-md-4");
+    //     //var $circle1 = $target.siblings('div').children().children().first();
+    //     $circle.css('color', '#ff5a5f');
+    //     $circle.fadeTo('slow', 1);
+    //     //console.log($circle1);
+    //   }
+    //   else {
+    //
+    //     //var $circle1 = $target.siblings('div').children().children().first();
+    //     //console.log($circle1);
+    //     var $circle = $target.parent().siblings('div').children().children().first();
+    //     $circle.css('color', '#008489');
+    //     $circle.fadeTo('slow', 0.6);
+    //   }
+    //
+    //   var isCodingHover = $("[class = 'col-md-4']").eq(1).is(":hover");
+    //   if (isCodingHover === true) {
+    //     console.log("is_hovered");
+    //
+    //   }
+    // });
 
-        var $circle1 = $target.siblings('div').children().children().first();
-        console.log($circle1);
-        $circle1.css('color', '#008489');
-      }
 
-      var isCodingHover = $("[class = 'col-md-4']").eq(1).is(":hover");
-      if (isCodingHover === true) {
-        console.log("is_hovered");
+    $(".btn-secondary").hover(function() {
+      /* Stuff to do when the mouse enters the element */
+      var $circle = $(this).parent().siblings('div').children().children().first();
+      var $text = $(this).parent().siblings('.lead');
+      console.log($text);
+      //$selected = $target.find(".col-md-4");
+      //var $circle1 = $target.siblings('div').children().children().first();
+      $circle.css('color', '#ff5a5f');
+      $text.css('font-size', '1.3rem');
+      $circle.fadeTo('slow', 1);
+      $circle.slideDown();
 
-      }
+    }, function() {
+      /* Stuff to do when the mouse leaves the element */
+      var $circle = $(this).parent().siblings('div').children().children().first();
+      $circle.css('color', '#ff5a5f');
+      $circle.fadeTo('slow', 0.6);
     });
+
+
+
 
 
 
